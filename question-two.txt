@@ -8,48 +8,45 @@ Output: [7, 9, "hi", 12, 53]
 
 /////////////////////////////////////////
 
-NON-FILTER METHOD
-// Function creates an empty return array, loops thorugh the input array, checks to see if the current element in the input array can be found in the answer array, if not, the function pushes that element to the answer array, if the element is already included in the answer array the loop will move on to the next iteration
+NON FILTER METHOD SOLUTION
 
 function answerFunction(array) {
-  answerArray = []
-  for(let i = 0; i < array.length; i++) {
-    if(!answerArray.includes(array[i])) {
-      answerArray.push(array[i])
+  if(typeof(array) = array) {
+    answerArray = []
+    for(let i = 0; i < array.length; i++) {
+      if(!answerArray.includes(array[i])) {
+        answerArray.push(array[i]) // [7, 9, "hi", 12, 53]
+      }
     }
   }
   return answerArray
 }
 
-answerFunction([7, 9, "hi", 12, "hi", 7, 53])
-
-/////////////////////////////////////////
-
-FILTER METHOD
-// Filter method iterates through an array and performs a check on each element of the array. If the check passes, the element will remain in the array. We create a new array titled filteredArray and if the index
+FILTER METHOD SOLUTION
 
 filteredArray = array.filter(function(item, index) {
-    return array.indexOf(item) === index;
+  return array.indexOf(item) === index;
 })
 
 console.log(filteredArray)
 
-/////////////////////////////////////////
+RECURSION SOLUTION
 
-RECURSION METHOD
-// Similar to non filter method, initial if statement breaks out of function if the original input string length equals zero. If inputArray[0] is not curently an element in the answerArray, then push that element to the answerArray and remove the first element from the inputArray. If the current element of the inputArray IS included, then ONLY 
+const recursionSolutionWrapped = inputArray => {
+  let answerArray = []
 
-let answerArray = [];
-
-const duplicatesRecursive = inputArray => {
-  if (inputArray.length === 0) {
-      return answerArray;
-  } else if (!answerArray.includes(inputArray[0])) {
-      answerArray.push(inputArray[0]);
+  const recursiveSolution = inputArray => {
+    if(inputArray.length === 0) {
+      return answerArray
+    } else if(!answerArray.includes(inputArray[0])) {
+      answerArray.push(array[0])
       inputArray.shift();
-      return duplicatesRecursive(inputArray);
-  } else {
+      return recursiveSolution(array)
+    } else {
       inputArray.shift();
-      return duplicatesRecursive(inputArray);
+      return recursiveSolution(array)
+    }
   }
-};
+  recursiveSolution(inputArray)
+  return answerArray
+  
