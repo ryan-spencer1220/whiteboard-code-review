@@ -13,3 +13,21 @@ Example
 Input: [9, 2, 7, 12]
 
 Output: [2, 7, 9, 12]
+
+function selectionSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i+1; j < array.length; j++) {
+      if (array[i] > array[j]) {
+        const higherValue = array[i];
+        array[i] = array[j];
+        array[j] = higherValue;
+      }
+    }
+  }
+  return array;
+}
+
+array = [9, 2, 7, 12]
+const sortedArray = array.sort((a, b) => {
+  return a - b
+});
