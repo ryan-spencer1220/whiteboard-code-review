@@ -10,10 +10,14 @@ Input: "copyright"
 
 Output: true
 
-const stringToURL = input => {
-  for(let i = 0; i < input.length; i++) {
-    for(let j = i + 1; j < input.length; j++)
-      if(input[i] == input[j]) {
+/////////////////////////////////////////
+
+WITH RECURSION METHOD
+
+const stringToURL = string => {
+  for(let i = 0; i < string.length; i++) {
+    for(let j = i + 1; j < string.length; j++)
+      if(string[i] == string[j]) {
         return false
       }
     }

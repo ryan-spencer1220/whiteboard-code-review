@@ -14,6 +14,10 @@ Input: [9, 2, 7, 12]
 
 Output: [2, 7, 9, 12]
 
+/////////////////////////////////////////
+
+NON SORT() METHOD
+
 function selectionSort(array) {
   for (let i = 0; i < array.length; i++) {
     for (let j = i+1; j < array.length; j++) {
@@ -26,6 +30,10 @@ function selectionSort(array) {
   }
   return array;
 }
+
+/////////////////////////////////////////
+
+SORT() METHOD
 
 array = [9, 2, 7, 12]
 const sortedArray = array.sort((a, b) => {

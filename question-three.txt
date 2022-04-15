@@ -6,6 +6,10 @@ Input: "aaabccdddda"
 
 Output: "3ab2c4da"
 
+/////////////////////////////////////////
+
+WITHOUT RECURSION
+
 function compressionString(string) {
   let result = ""
   let count = 0
@@ -21,3 +25,7 @@ function compressionString(string) {
 }
 
 compressionString('abbccdddda')
+
+/////////////////////////////////////////
+
+WITH RECURSION

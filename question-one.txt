@@ -8,13 +8,15 @@ Input: "Jasmine Ann Jones"
 
 Output: "Jasmine%20Ann%20Jones"
 
-/// Answer
+/////////////////////////////////////////
+
+WITHOUT RECURSION METHOD
 
 const stringToURL = input => {
   let answer = ""
   for(let i = 0; i < input.length; i++) {
     if(input[i] === " ") {
-      answer += "%"
+      answer += "%20"
     } else {
       answer += input[i]
     }
@@ -22,18 +24,26 @@ const stringToURL = input => {
   return answer
 }
 
+/////////////////////////////////////////
+
+WITH RECURSION METHOD
+
+let answer = ""
+
 const stringToURLRecursive = input => {
-  let answer = ""
-      const recursionFunction = input => {
-        if(input[i] === " ") {
-          answer += "%"
-        } else {
-          answer += input[i]
-      }
-      return recursionFunction(input[i + 1])
+    if (typeOf input != string) {
+    return;
+    } else if(input[i] === " ") {
+      input.substring(1)
+      answer += "%20"
+    } else {
+      input.substring(1)
+      answer += input[i]
+      return stringToURLRecursive(input)
     }
+  }
     return answer
 }
 
-stringToURLRecursive(recursionFunction("Jasmine Ann Jones"))
+stringToURLRecursive("Jasmine Ann Jones")
 
