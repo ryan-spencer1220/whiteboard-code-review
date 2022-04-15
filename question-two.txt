@@ -2,13 +2,14 @@ Question #2: Array Deduping
 Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
 
 Example
-Input: [7, 9, "hi", 12, "hi" 7, 53]
+Input: [7, 9, "hi", 12, "hi", 7, 53]
 
 Output: [7, 9, "hi", 12, 53]
 
 /////////////////////////////////////////
 
 NON-FILTER METHOD
+// Function creates an empty return array, loops thorugh the input array, checks to see if the current element in the input array can be found in the answer array, if not, the function pushes that element to the answer array, if the element is already included in the answer array the loop will move on to the next iteration
 
 function answerFunction(array) {
   answerArray = []
@@ -26,9 +27,9 @@ answerFunction([7, 9, "hi", 12, "hi", 7, 53])
 
 FILTER METHOD
 
+
 function filterAnswerFunction(array) {
-    return array.filter((item, 
-        index) => array.indexOf(item) === index);
+    return array.filter((item, index) => array.indexOf(item) === index);
 }
 
 filterAnswerFunction([7, 9, "hi", 12, "hi", 7, 53])
