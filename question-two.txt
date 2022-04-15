@@ -36,3 +36,19 @@ filterAnswerFunction([7, 9, "hi", 12, "hi", 7, 53])
 /////////////////////////////////////////
 
 RECURSION METHOD
+
+let i = 0;
+let answerArray = [];
+
+const duplicatesRecursive = inputArray => {
+  if (inputArray.length === 0) {
+    return answerArray;
+  } else if (!answerArray.includes(inputArray[i])) {
+    answerArray.push(inputArray[i]);
+    inputArray.shift();
+    return duplicatesRecursive(inputArray);
+  } else {
+    inputArray.shift();
+    return duplicatesRecursive(inputArray);
+  }
+};

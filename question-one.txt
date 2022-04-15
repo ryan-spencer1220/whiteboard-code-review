@@ -26,24 +26,27 @@ const stringToURL = input => {
 
 /////////////////////////////////////////
 
-WITH RECURSION METHOD
+WITH RECURSION METHOD - BROKEN
 
-let answer = ""
+let i = 0;
+let answer = "";
 
-const stringToURLRecursive = input => {
-    if (typeOf input != string) {
-    return;
-    } else if(input[i] === " ") {
-      input.substring(1)
-      answer += "%20"
-    } else {
-      input.substring(1)
-      answer += input[i]
-      return stringToURLRecursive(input)
-    }
+const stringToURLRecursive = (input) => {
+  if (input === "") {
+    return answer;
+  } else if (input[i] === " ") {
+    answer = answer + "%20";
+    input = input.substring(1);
+    i++;
+    console.log("Space: " + answer);
+  } else {
+    answer = answer + input[i];
+    input = input.substring(1);
+    i++;
+    console.log("Letter:" + input);
+    console.log("Letter: " + answer);
   }
-    return answer
-}
+  return stringToURLRecursive(input);
+};
 
-stringToURLRecursive("Jasmine Ann Jones")
-
+stringToURLRecursive("Jasmine Ann Jones");
