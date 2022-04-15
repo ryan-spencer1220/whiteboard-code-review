@@ -26,30 +26,30 @@ answerFunction([7, 9, "hi", 12, "hi", 7, 53])
 /////////////////////////////////////////
 
 FILTER METHOD
+// Filter method iterates through an array and performs a check on each element of the array. If the check passes, the element will remain in the array. We create a new array titled filteredArray and if the index
 
+filteredArray = array.filter(function(item, index) {
+    return array.indexOf(item) === index;
+})
 
-function filterAnswerFunction(array) {
-    return array.filter((item, index) => array.indexOf(item) === index);
-}
-
-filterAnswerFunction([7, 9, "hi", 12, "hi", 7, 53])
+console.log(filteredArray)
 
 /////////////////////////////////////////
 
 RECURSION METHOD
+// Similar to non filter method, initial if statement breaks out of function if the original input string length equals zero. If inputArray[0] is not curently an element in the answerArray, then push that element to the answerArray and remove the first element from the inputArray. If the current element of the inputArray IS included, then ONLY 
 
-let i = 0;
 let answerArray = [];
 
 const duplicatesRecursive = inputArray => {
   if (inputArray.length === 0) {
-    return answerArray;
-  } else if (!answerArray.includes(inputArray[i])) {
-    answerArray.push(inputArray[i]);
-    inputArray.shift();
-    return duplicatesRecursive(inputArray);
+      return answerArray;
+  } else if (!answerArray.includes(inputArray[0])) {
+      answerArray.push(inputArray[0]);
+      inputArray.shift();
+      return duplicatesRecursive(inputArray);
   } else {
-    inputArray.shift();
-    return duplicatesRecursive(inputArray);
+      inputArray.shift();
+      return duplicatesRecursive(inputArray);
   }
 };
